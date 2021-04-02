@@ -1,0 +1,870 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Vnews</title>
+
+
+
+
+
+
+  <style>
+    body {
+      background-color: #363535;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-family: Roboto, Arial, sans-serif;
+      color: #fff;
+      letter-spacing: .02em;
+
+    }
+
+    .bg-dark {
+      background-color: #2a2929 !important;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .navbar {
+      position: relative;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      padding: .1rem 1rem;
+    }
+
+    .navbar-nav {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      padding-left: 103px;
+      margin-bottom: 0;
+      list-style: none;
+
+
+    }
+
+    .navbar-dark .navbar-nav .active>.nav-link,
+    .navbar-dark .navbar-nav .nav-link.active,
+    .navbar-dark .navbar-nav .nav-link.show,
+    .navbar-dark .navbar-nav .show>.nav-link {
+
+      color: white;
+
+    }
+
+
+    .navbar-dark .navbar-nav .active>.nav-link:hover,
+    .navbar-dark .navbar-nav .nav-link.active:hover,
+    .navbar-dark .navbar-nav .nav-link.show:hover,
+    .navbar-dark .navbar-nav .show>.nav-link:hover {
+      color: rgb(121, 121, 223);
+    }
+
+
+
+
+
+
+    .nav-link {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      letter-spacing: .025em;
+      font-size: 15px;
+    }
+
+    .navbar-nav .nav-link {
+      color: rgb(91, 91, 243);
+      transition: background-color .2s ease-in-out, color .2s ease-in-out;
+
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 1000;
+      display: none;
+      float: left;
+      min-width: 10rem;
+      padding: .5rem 0;
+      margin: .125rem 0 0;
+      font-size: 1rem;
+      color: #ced4da;
+      text-align: left;
+      list-style: none;
+      background-color: #2a2929 !important;
+      background-clip: padding-box;
+      border: 1px solid rgba(228, 217, 217, 0.15);
+      border-radius: .25rem;
+    }
+
+    .dropdown-item {
+      color: #9facbd;
+      transition: background-color .2s ease-in-out, color .2s ease-in-out;
+    }
+
+    .nav-item.active:hover {
+      color: white;
+    }
+
+
+
+
+
+    .img1 {
+      vertical-align: middle;
+      border-style: none;
+      height: 380px;
+    }
+
+    .text-md-center {
+      text-align: center !important;
+      margin-top: -612px;
+      margin-left: 600px;
+    }
+
+    .md.text-center {
+      background-color: rgb(116, 116, 241);
+      box-shadow: 0 8px 32px 0 rgb(0, 0, 0);
+      backdrop-filter: blur(0.5px);
+      -webkit-backdrop-filter: blur(0.5px);
+      border-radius: 10px;
+      border: 0px solid rgb(81 66 209 / 18%);
+    }
+
+    .img1 {
+      vertical-align: middle;
+      border-style: none;
+      height: 710px;
+    }
+
+
+    .img2 {
+      vertical-align: middle;
+      border-style: none;
+      height: 640px;
+      margin-left: -88px;
+    }
+
+    .btn {
+
+      margin-left: 130px;
+      margin-top: -550px;
+      background: transparent;
+      text-decoration: none;
+      transition: 0.2s;
+      color: rgb(116, 116, 241);
+      text-transform: uppercase;
+      overflow: hidden;
+      font-size: 20px;
+      border: 2px solid rgb(91, 91, 243);
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .btn:hover {
+      color: #2a2929 !important;
+      background: rgb(116, 116, 241);
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      transition-delay: 0.1s;
+
+    }
+
+    .md {
+
+      margin: 34px 260px;
+      height: 404px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .btn1 {
+      background: transparent;
+      text-decoration: none;
+      transition: 0.2s;
+      color: #363535;
+      text-transform: uppercase;
+      overflow: hidden;
+      cursor: pointer;
+      font-size: 20px;
+      border: 2px solid #363535;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      height: 40px;
+    }
+
+    .btn1:hover {
+      color: rgb(116, 116, 241);
+      background: #363535;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      transition-delay: 0.1s;
+
+    }
+
+    .tit {
+      padding-left: 402px;
+      padding-top: 14px;
+    }
+
+    .img3 {
+      height: 404px;
+      width: 377px;
+    }
+
+
+
+
+    @media (max-width: 1445px) and (min-width: 1215px) {
+
+
+      .img3 {
+        height: 528px;
+        width: 377px;
+      }
+
+      .md {
+
+        margin: 34px 160px;
+        height: 528px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+
+      .btn1 {
+        background: transparent;
+        text-decoration: none;
+        transition: 0.2s;
+        color: #363535;
+        text-transform: uppercase;
+        overflow: hidden;
+        cursor: pointer;
+        font-size: 20px;
+        border: 2px solid #363535;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        height: 40px;
+      }
+
+      .btn1:hover {
+        color: rgb(116, 116, 241);
+        background: #363535;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        transition-delay: 0.1s;
+
+      }
+
+      .tit {
+        padding-left: 402px;
+        padding-top: 14px;
+      }
+
+    }
+
+    @media (max-width: 1215px) and (min-width: 946px) {
+      .text-md-center {
+        text-align: center !important;
+        margin-top: -544px;
+        margin-left: 513px;
+      }
+
+      .img1 {
+        vertical-align: middle;
+        border-style: none;
+        height: 620px;
+      }
+
+
+      .img2 {
+        vertical-align: middle;
+        border-style: none;
+        height: 521px;
+      }
+
+      .btn {
+
+        margin-left: 96px;
+        margin-top: -447px;
+      }
+
+      .img3 {
+        height: 528px;
+        width: 377px;
+      }
+
+      .md {
+
+        margin: 34px 120px;
+        height: 528px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+
+
+    }
+
+
+    @media (max-width: 946px) and (min-width: 665px) {
+      .text-md-center {
+        text-align: center !important;
+        margin-top: -322px;
+        margin-left: 360px;
+      }
+
+      .img1 {
+        vertical-align: middle;
+        border-style: none;
+        height: 380px;
+      }
+
+
+      .img2 {
+        vertical-align: middle;
+        border-style: none;
+        height: 346px;
+        padding-left: 41px;
+      }
+
+      .btn {
+
+        margin-left: 62px;
+        margin-top: -304px;
+      }
+
+
+      .img3 {
+        height: 658px;
+        width: 377px;
+      }
+
+      .md {
+
+        margin: 34px 12px;
+        height: 658px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+
+    }
+
+
+    @media (max-width: 665px) and (min-width: 400px) {
+      .text-md-center {
+        text-align: center !important;
+        margin-top: -219px;
+        margin-left: 223px;
+      }
+
+      .img1 {
+        vertical-align: middle;
+        border-style: none;
+        height: 277px;
+      }
+
+
+      .img2 {
+        vertical-align: middle;
+        border-style: none;
+        height: 240px;
+        margin-left: -50px;
+      }
+
+      .btn {
+
+        margin-left: 29px;
+    margin-top: -240px;
+    font-size: 13px;
+    width: 110px;
+      }
+
+      .img3 {
+        height: 240px;
+        width: 235px;
+      }
+
+      .md {
+
+        margin: 34px 7px;
+        height: 658px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+
+      .tit {
+        padding-left: 244px;
+        padding-top: 14px;
+      }
+
+      .tit1 {
+        padding-left: 15px;
+        padding-top: 78px;
+      }
+
+      .tit3 {
+        font-size: 17px;
+      }
+
+      .tit4 {
+        padding-left: 15px;
+        padding-top: 18px;
+      }
+
+
+
+    }
+
+
+    @media (max-width: 400px) and (min-width: 200px) {
+      .text-md-center {
+        text-align: center !important;
+        margin-top: -186px;
+        margin-left: 167px;
+      }
+
+
+      .img1 {
+        vertical-align: middle;
+        border-style: none;
+        height: 191px;
+      }
+
+
+      .img2 {
+        vertical-align: middle;
+        border-style: none;
+        height: 215px;
+        margin-left: -42px;
+      }
+
+      .btn {
+
+        margin-left: 24px;
+    margin-top: -133px;
+    font-size: 11px;
+    width: 100px;
+      }
+
+
+      .img3 {
+        height: 171px;
+        width: 152px;
+      }
+
+      .md {
+
+        margin: 34px 23px;
+        height: 551px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+
+      .tit {
+        padding-left: 160px;
+        padding-top: 14px;
+      }
+
+      .tit1 {
+        padding-left: 15px;
+        padding-top: 81px;
+      }
+
+      .tit3 {
+        font-size: 17px;
+      }
+
+      .tit4 {
+        padding-left: 15px;
+        padding-top: 18px;
+      }
+
+      .titp {
+        display: none;
+      }
+
+      .slider {
+        margin: 13px;
+      }
+
+      .card1 {
+        width: 329px;
+      }
+
+
+    }
+
+
+    @media (max-width: 572px) and (min-width: 200px) {
+
+      .navbar-expand-lg {
+        width: 105%;
+      }
+
+      #topheadline {
+        width: 102.5%;
+      }
+    }
+
+    @media (min-width: 992px) {}
+
+
+    @media (min-width: 1200px) {}
+
+
+    .h1,
+    .h2,
+    .h3,
+    .h4,
+    .h5,
+    .h6,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-bottom: -0.5rem;
+      font-family: math;
+      font-weight: 500;
+      line-height: 1.2;
+      color: inherit;
+    }
+
+    .slider {
+      margin: 20px;
+    }
+
+
+
+
+
+
+    .bg-shadow {
+      background: rgba(76, 76, 76, 0);
+      background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(179, 171, 171, 0)), color-stop(49%, rgba(48, 48, 48, 0.37)), color-stop(100%, rgba(19, 19, 19, 0.8)));
+      background: linear-gradient(to bottom, rgba(179, 171, 171, 0) 0%, rgba(48, 48, 48, 0.71) 49%, rgba(19, 19, 19, 0.8) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4c4c4c', endColorstr='#131313', GradientType=0);
+    }
+
+    .top-indicator {
+      right: 0;
+      top: 1rem;
+      bottom: inherit;
+      left: inherit;
+      margin-right: 1rem;
+    }
+
+    .overflow {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .zoom img {
+      transition: all 0.2s linear;
+    }
+
+    .zoom:hover img {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+
+    .card1 {
+
+      box-shadow: 0 8px 32px 0 rgb(0, 0, 0);
+      backdrop-filter: blur(20.0px);
+      -webkit-backdrop-filter: blur(20.0px);
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="">
+      <img src="8.png" style="height: 45px;" alt=""></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item active " style="padding-left: 23px;">
+          <a class="nav-link " href="">Home <span class="sr-only">(current)</span></a>
+        </li>
+
+        <li class="nav-item active " style="padding-left: 23px;">
+          <a class="nav-link " href="#topheadline">TopNews<span class="sr-only">(current)</span></a>
+        </li>
+
+        <li class="nav-item active " style="padding-left: 23px;">
+          <a class="nav-link " href="#topinworld">TopInWorld<span class="sr-only">(current)</span></a>
+        </li>
+
+
+
+        <li class="nav-item active" style="padding-left: 23px;">
+          <a class="nav-link" href="#aus">Sports</a>
+        </li>
+
+
+        <li class="nav-item active" style="padding-left: 23px;">
+          <a class="nav-link" href="#covidnews">COVID-19</a>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+
+
+
+
+  <br>
+  <br>
+
+  <br>
+  <br>
+
+
+  <div class="jumbptro" style="margin-top: -109px;">
+
+    <img class="img2" src="9.png" alt="">
+    <div class="text-md-center">
+      <img class="img1" src="5.png" alt="">
+    </div>
+    <a href="#topinworld"><button type="button" class="btn ">
+        Click here >
+      </button></a>
+
+  </div>
+
+
+
+  
+  <div class="text-center" style="color: white;">
+    <h1><b>TOP HEADLINES</b></h1>
+
+  </div>
+  <section id="topheadline" style="background-color:  rgb(116, 116, 241);">
+
+    <div class="md text-center">
+      <img class="img3 float-left" src="">
+      <div class="tit text-left">
+        <h3 class="tit3" style="color:  #363535;"><b>{{x.title}}</b></h3>
+        <hr
+          style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);   border-top:3.5px solid  #363535">
+      </div>
+
+      <div class=" titp tit text-left">
+        <p>{{x.title}}</p>
+      </div>
+
+      <div class=" tit1 tit text-left">
+        <p>{{x.content}}</p>
+      </div>
+
+      <div class="tit4 tit text-left">
+        <a href=""><button class="btn1"> Read More >
+
+          </button></a>
+      </div>
+    </div>
+
+  </section>
+
+  <br>
+  <br>
+
+
+  <div class="text-center" style="color: white;">
+    <h1><b>TOP IN WORLD</b></h1>
+
+
+  </div>
+
+  <div id="topinworld" class="container my-4">
+    <div class="container-fluid">
+      <a href="{{x.url}}">
+        <h3 class="tit3" style="color:  rgb(116, 116, 241); margin-top: 35px; ">{{x.title}}</h3>
+      </a>
+      <hr
+        style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);   border-top:1.5px solid  rgb(116, 116, 241)">
+      <img width="55%" height="45%" src="{{x.urlToImage}}" alt="..."
+        style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+
+
+    </div>
+
+
+
+  </div>
+
+  <br>
+  <br>
+  <br>
+
+
+
+  <div class="container">
+    <div class="row">
+      <br />
+      <div class="col text-center">
+        <h2>COVID-19 ANALYSIS(INDIA)</h2>
+        <hr style="border-top: 3px solid rgb(255 251 251);">
+
+      </div>
+    </div>
+    <br>
+    <div class="row text-center" id="covidnews">
+      <div class="col">
+        <div class="card1" id="new"
+          style=" margin-left: 22px; height: 131px; width: 282px; margin-bottom: 13px;  background: rgba(116,116,241);">
+          <h4>NEW CASES</h4>
+
+          <h2 style="font-size: 97px; font-weight: bolder;"></h2>
+
+        </div>
+      </div>
+      <br>
+      <div class="col">
+        <div class="card1"
+          style="margin-left: 22px;  height: 131px;width: 282px;margin-bottom: 13px; background: rgb(22, 209, 94);">
+          <h4>RECOVERED CASES</h4>
+
+          <h2 style="font-size: 97px; font-weight: bolder;"></h2>
+
+        </div>
+      </div>
+      <br>
+      <div class="col">
+        <div class="card1" style="margin-left: 22px;  height: 131px;width: 282px; background: rgb(243, 52, 4);">
+          <h4>DEATH</h4>
+
+          <h2 style="font-size: 97px; font-weight: bolder;"></h2>
+
+        </div>
+      </div>
+
+    </div>
+
+    <br>
+    <br>
+
+  </div>
+
+
+
+  <br>
+  <br>
+
+
+
+
+
+
+  <div class="container">
+
+    <h2>TOP IN SPORTS</h2>
+    <hr style="border-top: 3px solid rgb(255 251 251);">
+  </div>
+
+
+  <section id="aus">
+
+    <div class="md text-center">
+      <img class="img3 float-left" src="">
+      <div class="tit text-left">
+        <h3 class="tit3" style="color:  #363535;"><b>{{x.title}}</b></h3>
+        <hr
+          style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);   border-top:3.5px solid  #363535">
+      </div>
+
+      <div class=" titp tit text-left">
+        <p>{{x.title}}</p>
+      </div>
+
+      <div class=" tit1 tit text-left">
+        <p>{{x.content}}</p>
+      </div>
+
+      <div class="tit4 tit text-left">
+        <a href=""><button class="btn1"> Read More >
+
+          </button></a>
+      </div>
+    </div>
+   
+  </section>
+  
+  <div class="container" style="display: flex;
+  justify-content: center;">
+
+    <h2>MORE COMING SOON</h2>
+  </div>
+
+  <br>
+  <br>
+
+  
+<footer class=" container py-5">
+  <div class="row">
+    <div class="col-12 col-md">
+      <a href="https://www.linkedin.com/in/vivek-singh-4059b91a8/"><img src="8.png" style="height: 45px; margin-top: -11px;" alt="">
+      <small class="d-block mb-3 text-muted">© VIVEKSINGH</small></a>
+    </div>
+    <div class="col-6 col-md" >
+      <a href="/index.html"><h5 style="margin-bottom: 0.5rem;">HOME</h5>
+
+    </div>
+    <div class="col-6 col-md" >
+      <a href="#topheadline"><h5 style="margin-bottom: 0.5rem;">TOPNEWS</h5>
+
+    </div>
+    <div class="col-6 col-md">
+      <a href="https://www.bbc.com/news"><h5 style="margin-bottom: 0.5rem;">BBCNEWS</h5>
+
+    </div>
+    <div class="col-6 col-md">
+      <a href="{https://www.linkedin.com/in/vivek-singh-4059b91a8/"><h5 style="margin-bottom: 0.5rem;">About</h5>
+
+    </div>
+
+    <div class="col-6 col-md">
+      <a style="margin-bottom: 0.5rem;" href="#">back to top</a>
+
+    </div>
+  </div>
+  </footer>
+
+
+
+
+
+
+
+</body>
+<script src="main.js"></script>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+
+</html>
